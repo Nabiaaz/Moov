@@ -1,11 +1,14 @@
 
 applications:
-  proxy:
-    type: docker
-    source:
-      root: "/"
+  myapp:
+    type: 'nodejs:22'
+    hooks:
+      build: 'npm install'
+    web:
+      commands:
+        start: 'node workers.js'
 
 routes:
-  "https://{default}/":
+  'https://{default}/':
     type: upstream
-    upstream: "proxy:http"
+    upstream: 'myapp:http'
