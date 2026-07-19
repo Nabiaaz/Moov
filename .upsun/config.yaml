@@ -1,5 +1,7 @@
+
 applications:
   proxy:
+    type: docker
     source:
       root: "/"
 
