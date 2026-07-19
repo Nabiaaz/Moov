@@ -1,0 +1,18 @@
+applications:
+  moov:
+    source:
+      root: /
+    languages:
+      nodejs:
+        version: 20
+    # Installez nginx via le système si possible, ou utilisez un binaire
+    hooks:
+      build: |
+        # Commandes pour préparer votre environnement
+      deploy: |
+        # Lancer Nginx avec votre configuration spécifique
+        nginx -c $PLATFORM_APP_DIR/nginx.conf -g 'daemon off;'
+    web:
+      commands:
+        start: nginx -c $PLATFORM_APP_DIR/nginx.conf -g 'daemon off;'
+
