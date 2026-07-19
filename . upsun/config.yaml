@@ -1,0 +1,9 @@
+applications:
+  proxy:
+    source:
+      root: "/"
+
+routes:
+  "https://{default}/":
+    type: upstream
+    upstream: "proxy:http"
