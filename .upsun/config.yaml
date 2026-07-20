@@ -1,0 +1,9 @@
+applications:
+  moov:
+    type: 'nodejs:20'
+    source:
+      root: /
+    web:
+      commands:
+        start: node worker.js
+
